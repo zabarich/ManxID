@@ -57,26 +57,12 @@ export const authOptions: NextAuthOptions = {
       async authorize(credentials) {
         console.log('Authorize called with:', { email: credentials?.email, password: credentials?.password })
         
-        // Create unique user ID for each demo session
-        const uniqueId = 'demo-user-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9)
-        
-        // Randomize demo persona for variety
-        const demoPersonas = [
-          { name: 'Emily Johnson', email: 'emily@demo.gov.im' },
-          { name: 'Adam Smith', email: 'adam@demo.gov.im' },
-          { name: 'Sarah Williams', email: 'sarah@demo.gov.im' },
-          { name: 'Michael Brown', email: 'michael@demo.gov.im' },
-          { name: 'Jessica Davis', email: 'jessica@demo.gov.im' }
-        ]
-        
-        const randomPersona = demoPersonas[Math.floor(Math.random() * demoPersonas.length)]
-        
-        console.log('Demo credentials - creating unique user:', uniqueId, 'as', randomPersona.name)
-        
+        // Simple demo authentication - fixed user for consistent experience
+        console.log('Demo credentials - allowing login')
         return {
-          id: uniqueId,
-          name: randomPersona.name,
-          email: randomPersona.email,
+          id: 'demo-user-123',
+          name: 'Emily Johnson',
+          email: 'demo@gov.im',
           onboardingCompleted: false,
         }
       }

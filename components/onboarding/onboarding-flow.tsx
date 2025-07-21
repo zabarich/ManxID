@@ -87,11 +87,12 @@ export default function OnboardingFlow() {
     try {
       console.log('Completing onboarding...')
       
-      // Update session with mock profile data
+      // Update session with mock profile data and change ID to mark as completed
       await update({
         ...session,
         user: {
           ...session?.user,
+          id: 'demo-user-123-completed', // Mark as completed
           onboardingCompleted: true,
           dateOfBirth: '1995-06-15', // Mock data
           address: {
@@ -105,8 +106,8 @@ export default function OnboardingFlow() {
         }
       })
       
-      // Redirect to completion handler
-      router.push('/onboarding/complete')
+      // Direct redirect to dashboard
+      window.location.href = '/'
     } catch (error) {
       console.error('Onboarding completion error:', error)
       // Fallback: try direct navigation
