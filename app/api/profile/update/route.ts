@@ -38,10 +38,13 @@ export async function POST(request: NextRequest) {
     
     if (data.propagateToServices) {
       const services = [
-        'tax-service',
-        'vehicle-registration',
+        'tax-code-service',
+        'vehicle-tax-service',
+        'driving-licence-service',
         'benefits-service',
-        'health-service',
+        'gp-registration-service',
+        'electoral-register-service',
+        'payments-service',
         'education-service'
       ]
       

@@ -29,7 +29,7 @@ Create a working demo of a mobile‑first Manx ID wallet and web portal that p
 
 ## 5  Assumptions & Constraints
 * Existing GTS Azure AD B2C tenant is available for demo use.  
-* No personal data leaves the EU/UK data region.  
+* No personal data leaves the EU/Isle of Man data region.  
 * Demo must run cost‑free under Vercel’s hobby tier where possible.
 
 ## 6  Personas

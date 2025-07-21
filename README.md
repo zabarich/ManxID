@@ -6,7 +6,7 @@ A mobile-first digital identity wallet and web portal for Isle of Man government
 
 - **Single Sign-On**: Azure AD B2C authentication with FIDO2 support
 - **Digital Onboarding**: Biometric and document verification (demo stubs)
-- **Service Dashboard**: Unified view of government services (Tax, Vehicle, Benefits, Health, Education)
+- **Service Dashboard**: Unified view of 9 government services (Tax Code & Self Assessment, Vehicle Ownership & Tax, Driving Licence, Benefits & Support, GP Registration, Electoral Register, Payments & Receipts, Notifications Hub, Education & Qualifications)
 - **Tell Us Once**: Update address and contact details across all services
 - **Proof of Age**: QR credential for age verification
 - **Mobile-First**: Responsive design optimized for mobile devices
@@ -163,7 +163,7 @@ npm start
 - **No PII Storage**: Personal data simulated, not persisted
 - **HTTPS Required**: Use HTTPS in production
 - **CSRF Protection**: Built into NextAuth.js
-- **Data Residency**: Designed for UK/EU compliance
+- **Data Residency**: Designed for Isle of Man/EU compliance
 
 ## Contributing
 

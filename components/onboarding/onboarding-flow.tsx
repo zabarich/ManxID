@@ -148,7 +148,7 @@ export default function OnboardingFlow() {
                     Bank-level security
                   </h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Your data is encrypted and stays within UK/EU borders
+                    Your data is encrypted and stays within Isle of Man/EU borders
                   </p>
                 </div>
               </div>

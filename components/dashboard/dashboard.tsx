@@ -43,78 +43,149 @@ export default function Dashboard() {
 
   const services: Service[] = [
     {
-      id: 'tax',
-      title: 'Tax Records',
-      description: 'View tax returns and payments',
+      id: 'tax-code',
+      title: 'Tax Code & Self Assessment',
+      description: 'PAYE tax code and self assessment',
       icon: FileText,
       status: 'active',
       lastUpdated: '2 days ago',
       action: 'View Details',
       color: 'bg-green-50 text-green-700',
       data: {
+        taxCode: '1257L',
         taxYear: '2024/25',
         statusText: 'Up to date',
-        nextReturn: '31 Jan 2025'
+        nextReturn: '31 Jan 2025',
+        assessment: 'Complete'
       }
     },
     {
-      id: 'vehicle',
-      title: 'Vehicle Licence',
-      description: 'Manage vehicle registration',
+      id: 'vehicle-tax',
+      title: 'Vehicle Ownership & Tax',
+      description: 'Road tax, registration & MOT',
       icon: Car,
       status: 'expiring',
       lastUpdated: '1 week ago',
-      action: 'Renew Now',
-      color: 'bg-amber-50 text-amber-700',
+      action: 'Renew Tax',
+      color: 'bg-orange-50 text-orange-700',
       data: {
-        registration: 'MN65 ABC',
-        expires: '15 Feb 2025',
-        taxDue: '£150'
+        registration: 'MAN 123A',
+        roadTax: 'Expires 15 Jan 2025',
+        mot: 'Valid until Mar 2025',
+        statusText: 'Tax expiring soon'
+      }
+    },
+    {
+      id: 'driving',
+      title: 'Driving Licence',
+      description: 'Full licence and endorsements',
+      icon: CreditCard,
+      status: 'active',
+      lastUpdated: '6 months ago',
+      action: 'View Licence',
+      color: 'bg-blue-50 text-blue-700',
+      data: {
+        licenceNumber: 'JOHNS801234AB9IJ',
+        category: 'Full (B)',
+        expires: '12 Jul 2034',
+        statusText: 'Valid',
+        endorsements: 'None'
       }
     },
     {
       id: 'benefits',
-      title: 'Benefits',
-      description: 'View benefit payments',
-      icon: CreditCard,
+      title: 'Benefits & Support',
+      description: 'Housing benefit, income support',
+      icon: Heart,
       status: 'active',
       lastUpdated: '3 days ago',
-      action: 'View Payments',
-      color: 'bg-blue-50 text-blue-700',
+      action: 'View Claims',
+      color: 'bg-indigo-50 text-indigo-700',
       data: {
-        nextPayment: '28 Jan 2025',
-        amount: '£320',
-        type: 'Housing Benefit'
+        housingBenefit: 'Eligible',
+        statusText: 'Active claim',
+        nextPayment: '28 Dec 2024',
+        amount: '£245.50'
       }
     },
     {
-      id: 'health',
-      title: 'Health Records',
-      description: 'NHS number and appointments',
-      icon: Heart,
+      id: 'gp-registration',
+      title: 'GP Registration',
+      description: 'Doctor registration and NHS number',
+      icon: User,
       status: 'active',
-      lastUpdated: '5 days ago',
-      action: 'View Records',
+      lastUpdated: '2 weeks ago',
+      action: 'View Details',
       color: 'bg-red-50 text-red-700',
       data: {
-        nhsNumber: '***-***-1234',
-        gp: 'Douglas Medical Centre',
-        lastAppointment: '15 Jan 2025'
+        gp: 'Douglas Health Centre',
+        nhsNumber: '485 777 3456',
+        statusText: 'Registered',
+        lastVisit: '12 Nov 2024'
+      }
+    },
+    {
+      id: 'electoral',
+      title: 'Electoral Register',
+      description: 'Voting registration status',
+      icon: Settings,
+      status: 'active',
+      lastUpdated: '3 months ago',
+      action: 'View Status',
+      color: 'bg-purple-50 text-purple-700',
+      data: {
+        ward: 'Douglas East',
+        statusText: 'Registered to vote',
+        lastElection: 'General Election 2021',
+        postalVote: 'Not requested'
+      }
+    },
+    {
+      id: 'payments',
+      title: 'Payments & Receipts',
+      description: 'Transaction history and receipts',
+      icon: CreditCard,
+      status: 'active',
+      lastUpdated: '1 day ago',
+      action: 'View History',
+      color: 'bg-emerald-50 text-emerald-700',
+      data: {
+        lastPayment: 'Road Tax - £165.00',
+        date: '15 Dec 2024',
+        statusText: 'Payment confirmed',
+        method: 'Debit Card'
+      }
+    },
+    {
+      id: 'notifications',
+      title: 'Notifications Hub',
+      description: 'Alerts and updates from services',
+      icon: Bell,
+      status: 'attention',
+      lastUpdated: 'Now',
+      action: 'View All',
+      color: 'bg-yellow-50 text-yellow-700',
+      data: {
+        unread: '3 new messages',
+        urgent: '1 urgent reminder',
+        statusText: 'Action required',
+        latest: 'Road tax renewal due'
       }
     },
     {
       id: 'education',
-      title: 'Education',
-      description: 'Qualifications and grants',
+      title: 'Education & Qualifications',
+      description: 'Qualifications, grants and courses',
       icon: GraduationCap,
       status: 'active',
       lastUpdated: '1 month ago',
       action: 'View Details',
-      color: 'bg-purple-50 text-purple-700',
+      color: 'bg-cyan-50 text-cyan-700',
       data: {
         institution: 'Isle of Man College',
         grant: 'Higher Education Grant',
-        statusText: 'Approved'
+        statusText: 'Grant approved',
+        amount: '£3,500 per year'
       }
     }
   ]

@@ -118,11 +118,14 @@ export default function UserProfile() {
   }
 
   const services = [
-    { name: 'Tax Records', updated: true },
-    { name: 'Vehicle Registration', updated: true },
-    { name: 'Benefits', updated: true },
-    { name: 'Health Records', updated: true },
-    { name: 'Education', updated: false }
+    { name: 'Tax Code & Self Assessment', updated: true },
+    { name: 'Vehicle Ownership & Tax', updated: true },
+    { name: 'Driving Licence', updated: true },
+    { name: 'Benefits & Support', updated: true },
+    { name: 'GP Registration', updated: true },
+    { name: 'Electoral Register', updated: true },
+    { name: 'Payments & Receipts', updated: true },
+    { name: 'Education & Qualifications', updated: false }
   ]
 
   return (

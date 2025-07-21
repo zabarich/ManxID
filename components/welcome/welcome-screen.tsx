@@ -31,9 +31,9 @@ export default function WelcomeScreen() {
               <h2 className="text-xl font-semibold text-white mb-3">
                 Welcome to the Future of Government Services
               </h2>
-              <p className="text-blue-100 text-sm leading-relaxed">
-                One secure login, one profile update, access to all your Isle of Man government services.
-              </p>
+                        <p className="text-blue-100 text-sm leading-relaxed">
+            One secure login, one profile update, access to tax records, vehicle licensing, benefits, healthcare, and more Isle of Man government services.
+          </p>
             </div>
           </div>
 
@@ -57,9 +57,9 @@ export default function WelcomeScreen() {
               </div>
               <div>
                 <h3 className="text-white font-medium text-sm">Secure & Private</h3>
-                <p className="text-blue-100 text-xs">
-                  Bank-level security with your data staying in the UK/EU
-                </p>
+                            <p className="text-blue-100 text-xs">
+              Bank-level security with your data staying in the Isle of Man/EU
+            </p>
               </div>
             </div>
 
