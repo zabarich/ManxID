@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
     }
     
     const signature = crypto
-      .createHmac('sha256', process.env.NEXTAUTH_SECRET || 'demo-secret')
+      .createHmac('sha256', 'manx-id-demo-secret-key-for-qr-validation')
       .update(JSON.stringify(signatureData))
       .digest('hex')
     

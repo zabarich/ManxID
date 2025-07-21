@@ -1,5 +1,5 @@
 import { NextAuthOptions } from 'next-auth'
-import AzureADProvider from 'next-auth/providers/azure-ad'
+import CredentialsProvider from 'next-auth/providers/credentials'
 
 // Extend the built-in session types
 declare module 'next-auth' {
@@ -45,24 +45,28 @@ declare module 'next-auth' {
 }
 
 export const authOptions: NextAuthOptions = {
+  secret: process.env.NEXTAUTH_SECRET || 'manx-id-demo-secret-minimum-32-chars-long-for-nextauth-security',
   providers: [
-    AzureADProvider({
-      clientId: process.env.AZURE_AD_B2C_CLIENT_ID!,
-      clientSecret: process.env.AZURE_AD_B2C_CLIENT_SECRET!,
-      tenantId: process.env.AZURE_AD_B2C_TENANT_NAME!,
-      authorization: {
-        params: {
-          scope: 'openid profile email offline_access',
-        },
+    CredentialsProvider({
+      id: 'demo',
+      name: 'Demo Login',
+      credentials: {
+        email: { label: 'Email', type: 'email', placeholder: 'demo@gov.im' },
+        password: { label: 'Password', type: 'password', placeholder: 'demo' }
       },
-      token: {
-        url: `https://${process.env.AZURE_AD_B2C_TENANT_NAME}.b2clogin.com/${process.env.AZURE_AD_B2C_TENANT_NAME}.onmicrosoft.com/${process.env.AZURE_AD_B2C_PRIMARY_USER_FLOW}/oauth2/v2.0/token`,
-      },
-      userinfo: {
-        url: `https://${process.env.AZURE_AD_B2C_TENANT_NAME}.b2clogin.com/${process.env.AZURE_AD_B2C_TENANT_NAME}.onmicrosoft.com/${process.env.AZURE_AD_B2C_PRIMARY_USER_FLOW}/openid/v2.0/userinfo`,
-      },
-      wellKnown: `https://${process.env.AZURE_AD_B2C_TENANT_NAME}.b2clogin.com/${process.env.AZURE_AD_B2C_TENANT_NAME}.onmicrosoft.com/${process.env.AZURE_AD_B2C_PRIMARY_USER_FLOW}/v2.0/.well-known/openid_configuration`,
-    }),
+      async authorize(credentials) {
+        // Demo authentication - in production this would verify against real credentials
+        if (credentials?.email === 'demo@gov.im' && credentials?.password === 'demo') {
+          return {
+            id: 'demo-user-123',
+            name: 'Emily Johnson',
+            email: 'demo@gov.im',
+            onboardingCompleted: false,
+          }
+        }
+        return null
+      }
+    })
   ],
   callbacks: {
     async jwt({ token, user, account }) {
@@ -88,8 +92,6 @@ export const authOptions: NextAuthOptions = {
   },
   pages: {
     signIn: '/auth/signin',
-    signOut: '/auth/signout',
-    error: '/auth/error',
   },
   session: {
     strategy: 'jwt',

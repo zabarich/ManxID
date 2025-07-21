@@ -98,26 +98,15 @@ This is a demonstration application. Key demo features include:
 
 ## Environment Setup
 
-### Required Environment Variables
+### Environment Variables (Optional for Demo)
 
 ```bash
-# NextAuth.js
-NEXTAUTH_SECRET=your-secret-key-here
-NEXTAUTH_URL=your-app-url
+# For demo - no environment variables needed!
+# NextAuth.js will use built-in demo values
 
-# Azure AD B2C (get from Azure portal)
-AZURE_AD_B2C_TENANT_NAME=your-tenant
-AZURE_AD_B2C_CLIENT_ID=your-client-id
-AZURE_AD_B2C_CLIENT_SECRET=your-client-secret
-AZURE_AD_B2C_PRIMARY_USER_FLOW=B2C_1_signupsignin
+# Optional: Create .env.local if you want to customize
+NEXTAUTH_SECRET=manx-id-demo-secret-minimum-32-chars-long
 ```
-
-### Azure AD B2C Setup
-
-1. Create Azure AD B2C tenant
-2. Configure user flows for sign-up/sign-in
-3. Register application and get client credentials
-4. Update environment variables
 
 ## Deployment
 
@@ -182,11 +171,11 @@ This is a demonstration project for the Isle of Man Government Digital Identity 
 
 ## License
 
-Copyright © 2025 ETHOS Limited. Demonstration purposes only.
+Copyright © 2025 Isle of Man Government. Demonstration purposes only.
 
 ## Support
 
-For questions about this demo, contact ETHOS Limited.
+For questions about this demo, contact the Isle of Man Government Digital Team.
 
 ---
 

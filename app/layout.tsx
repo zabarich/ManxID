@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: 'Manx ID - Digital Identity Wallet',
   description: 'Your secure digital identity wallet for Isle of Man government services',
   keywords: 'digital identity, Isle of Man, government services, wallet, ID',
-  authors: [{ name: 'ETHOS Limited' }],
+  authors: [{ name: 'Isle of Man Government' }],
   viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#1d70b8' },

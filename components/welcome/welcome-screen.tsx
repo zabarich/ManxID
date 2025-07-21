@@ -91,7 +91,7 @@ export default function WelcomeScreen() {
           {/* CTA Button */}
           <div className="space-y-4">
             <button
-              onClick={() => signIn('azure-ad', { callbackUrl: '/' })}
+              onClick={() => signIn('demo', { callbackUrl: '/' })}
               className="w-full bg-white text-government-blue font-semibold py-3 px-6 rounded-xl 
                        hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-white/30 
                        transition-all duration-200 shadow-lg"
@@ -100,7 +100,7 @@ export default function WelcomeScreen() {
             </button>
             
             <p className="text-center text-xs text-blue-100">
-              Secure sign-in with your government account
+              Demo login - use demo@gov.im / demo
             </p>
           </div>
 
@@ -127,9 +127,9 @@ export default function WelcomeScreen() {
       <footer className="mt-12 pb-8">
         <div className="mobile-container">
           <div className="text-center">
-            <p className="text-xs text-blue-200">
-              © 2025 Isle of Man Government • Powered by ETHOS Limited
-            </p>
+                      <p className="text-xs text-blue-200">
+            © 2025 Isle of Man Government • Digital Identity Demo
+          </p>
           </div>
         </div>
       </footer>
