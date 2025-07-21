@@ -1,9 +1,5 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": ".next",
   "framework": "nextjs",
-  "installCommand": "npm install",
-  "devCommand": "npm run dev",
   "env": {
     "NEXTAUTH_SECRET": "manx-id-demo-secret-minimum-32-chars-long-for-nextauth-security"
   },
@@ -11,36 +7,5 @@
     "app/api/**/*.ts": {
       "maxDuration": 10
     }
-  },
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        }
-      ]
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/login",
-      "destination": "/auth/signin",
-      "permanent": true
-    },
-    {
-      "source": "/signup",
-      "destination": "/auth/signin",
-      "permanent": true
-    }
-  ]
+  }
 } 
