@@ -20,18 +20,22 @@ export default function SignInPage() {
 
     try {
       const result = await signIn('demo', {
-        email,
-        password,
+        email: email.trim(),
+        password: password.trim(),
         redirect: false,
       })
 
       if (result?.error) {
         setError('Invalid credentials. Please try: demo@gov.im / demo')
-      } else {
+      } else if (result?.ok) {
         // Successful login, redirect to main page
         router.push('/')
+        router.refresh()
+      } else {
+        setError('Login failed. Please try again.')
       }
     } catch (error) {
+      console.error('Sign in error:', error)
       setError('An error occurred during sign in')
     } finally {
       setIsLoading(false)

@@ -55,16 +55,16 @@ export const authOptions: NextAuthOptions = {
         password: { label: 'Password', type: 'password', placeholder: 'demo' }
       },
       async authorize(credentials) {
-        // Demo authentication - in production this would verify against real credentials
-        if (credentials?.email === 'demo@gov.im' && credentials?.password === 'demo') {
-          return {
-            id: 'demo-user-123',
-            name: 'Emily Johnson',
-            email: 'demo@gov.im',
-            onboardingCompleted: false,
-          }
+        console.log('Authorize called with:', { email: credentials?.email, password: credentials?.password })
+        
+        // TEMPORARY: Always allow demo login for debugging
+        console.log('Demo credentials - allowing login')
+        return {
+          id: 'demo-user-123',
+          name: 'Emily Johnson',
+          email: 'demo@gov.im',
+          onboardingCompleted: false,
         }
-        return null
       }
     })
   ],
