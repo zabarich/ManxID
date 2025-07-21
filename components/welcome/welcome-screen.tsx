@@ -100,7 +100,7 @@ export default function WelcomeScreen() {
             </button>
             
             <p className="text-center text-xs text-blue-100">
-              Demo login - use demo@gov.im / demo
+              Demo login - any credentials work for testing
             </p>
           </div>
 

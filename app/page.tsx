@@ -12,8 +12,7 @@ export default async function Home() {
   }
 
   // Check if user needs to complete onboarding
-  // TEMPORARY: More lenient check for demo
-  if (!session.user.onboardingCompleted && session.user.id !== 'demo-user-123') {
+  if (!session.user.onboardingCompleted) {
     redirect('/onboarding')
   }
 

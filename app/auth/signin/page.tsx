@@ -78,9 +78,9 @@ export default function SignInPage() {
                 </svg>
               </div>
               <div>
-                <p className="text-xs text-blue-800 font-medium mb-1">Demo Login</p>
+                <p className="text-xs text-blue-800 font-medium mb-1">Demo Access</p>
                 <p className="text-xs text-blue-700">
-                  Use <strong>demo@gov.im</strong> / <strong>demo</strong> to sign in
+                  Enter <strong>any email and password</strong> to access the demo
                 </p>
               </div>
             </div>
@@ -163,7 +163,8 @@ export default function SignInPage() {
             <ul className="text-xs text-gray-600 space-y-1">
               <li>• This is a demonstration of the Manx ID digital wallet</li>
               <li>• No real personal data is stored or processed</li>
-              <li>• Use the demo credentials above to explore the system</li>
+              <li>• Each login creates a unique demo session with onboarding</li>
+              <li>• Perfect for multiple people to try the system</li>
             </ul>
           </div>
         </div>
