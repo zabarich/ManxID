@@ -85,7 +85,9 @@ export default function OnboardingFlow() {
   
   const completeOnboarding = async () => {
     try {
-      // Update session to mark onboarding as completed
+      console.log('Completing onboarding...')
+      
+      // Update session with mock profile data
       await update({
         ...session,
         user: {
@@ -103,9 +105,12 @@ export default function OnboardingFlow() {
         }
       })
       
-      router.push('/')
+      // Redirect to completion handler
+      router.push('/onboarding/complete')
     } catch (error) {
       console.error('Onboarding completion error:', error)
+      // Fallback: try direct navigation
+      router.push('/')
     }
   }
 
