@@ -1,0 +1,51 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "installCommand": "npm install",
+  "devCommand": "npm run dev",
+  "env": {
+    "NEXTAUTH_SECRET": "@nextauth-secret",
+    "NEXTAUTH_URL": "@nextauth-url",
+    "AZURE_AD_B2C_TENANT_NAME": "@azure-b2c-tenant",
+    "AZURE_AD_B2C_CLIENT_ID": "@azure-b2c-client-id",
+    "AZURE_AD_B2C_CLIENT_SECRET": "@azure-b2c-client-secret",
+    "AZURE_AD_B2C_PRIMARY_USER_FLOW": "@azure-b2c-flow"
+  },
+  "functions": {
+    "app/api/**/*.ts": {
+      "maxDuration": 10
+    }
+  },
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/login",
+      "destination": "/auth/signin",
+      "permanent": true
+    },
+    {
+      "source": "/signup",
+      "destination": "/auth/signin",
+      "permanent": true
+    }
+  ]
+} 

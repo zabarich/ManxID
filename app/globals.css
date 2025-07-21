@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-sans;
+  }
+}
+
+/* Custom focus styles for accessibility */
+.focus-visible:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary-600 ring-2 ring-primary-600;
+}
+
+/* Government Design System button styles */
+.btn-primary {
+  @apply bg-government-blue text-white px-4 py-2 rounded font-medium hover:bg-opacity-90 focus-visible;
+}
+
+.btn-secondary {
+  @apply bg-white text-government-blue border border-government-blue px-4 py-2 rounded font-medium hover:bg-gray-50 focus-visible;
+}
+
+/* Mobile-first responsive utilities */
+.mobile-container {
+  @apply max-w-md mx-auto px-4;
+}
+
+.desktop-container {
+  @apply max-w-4xl mx-auto px-6;
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out forwards;
+}
+
+/* Loading states */
+.loading {
+  @apply animate-pulse bg-gray-200 dark:bg-gray-700;
+}
+
+/* QR Code styles */
+.qr-container {
+  @apply bg-white p-4 rounded-lg shadow-lg border;
+}
+
+/* Card components */
+.service-card {
+  @apply bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm border hover:shadow-md transition-shadow cursor-pointer;
+}
+
+.service-card:hover {
+  @apply border-primary-300;
+}
+
+/* Form styles */
+.form-input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 
+         focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500
+         dark:bg-gray-700 dark:border-gray-600 dark:text-white;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1;
+}
+
+.form-error {
+  @apply text-red-600 text-sm mt-1;
+}
+
+/* Header and navigation */
+.nav-link {
+  @apply text-gray-600 hover:text-government-blue dark:text-gray-300 dark:hover:text-blue-400 
+         font-medium transition-colors duration-200;
+}
+
+.nav-link.active {
+  @apply text-government-blue dark:text-blue-400;
+}
+
+/* Status indicators */
+.status-success {
+  @apply bg-government-green text-white;
+}
+
+.status-warning {
+  @apply bg-government-yellow text-government-black;
+}
+
+.status-error {
+  @apply bg-government-red text-white;
+}
+
+.status-info {
+  @apply bg-government-blue text-white;
+} 
