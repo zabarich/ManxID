@@ -69,7 +69,8 @@ export const authOptions: NextAuthOptions = {
     })
   ],
   callbacks: {
-    async jwt({ token, user, account }) {
+    async jwt({ token, user, account, trigger, session }) {
+      // Initial login
       if (account && user) {
         return {
           ...token,
@@ -77,6 +78,15 @@ export const authOptions: NextAuthOptions = {
           onboardingCompleted: user.onboardingCompleted || false,
         }
       }
+      
+      // Session update (when update() is called)
+      if (trigger === 'update' && session) {
+        return {
+          ...token,
+          ...session,
+        }
+      }
+      
       return token
     },
     async session({ session, token }) {
@@ -86,6 +96,11 @@ export const authOptions: NextAuthOptions = {
           ...session.user,
           id: token.id as string,
           onboardingCompleted: token.onboardingCompleted as boolean,
+          // Include other profile fields if they exist
+          dateOfBirth: token.dateOfBirth as string,
+          address: token.address as any,
+          phone: token.phone as string,
+          niNumber: token.niNumber as string,
         },
       }
     },

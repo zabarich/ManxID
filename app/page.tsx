@@ -12,8 +12,7 @@ export default async function Home() {
   }
 
   // Check if user needs to complete onboarding
-  // TEMPORARY: Skip onboarding for demo-user-123 after first completion
-  if (!session.user.onboardingCompleted && session.user.id !== 'demo-user-123-completed') {
+  if (!session.user.onboardingCompleted) {
     redirect('/onboarding')
   }
 

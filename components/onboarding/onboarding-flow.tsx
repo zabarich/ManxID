@@ -87,26 +87,26 @@ export default function OnboardingFlow() {
     try {
       console.log('Completing onboarding...')
       
-      // Update session with mock profile data and change ID to mark as completed
-      await update({
-        ...session,
-        user: {
-          ...session?.user,
-          id: 'demo-user-123-completed', // Mark as completed
-          onboardingCompleted: true,
-          dateOfBirth: '1995-06-15', // Mock data
-          address: {
-            line1: '123 Main Street',
-            city: 'Douglas',
-            postcode: 'IM1 2AB',
-            country: 'Isle of Man'
-          },
-          phone: '+44 1624 123456',
-          niNumber: 'AB123456C'
-        }
+      // Update session with profile data and mark onboarding as completed
+      const updateResult = await update({
+        onboardingCompleted: true,
+        dateOfBirth: '1995-06-15',
+        address: {
+          line1: '123 Main Street',
+          city: 'Douglas',
+          postcode: 'IM1 2AB',
+          country: 'Isle of Man'
+        },
+        phone: '+44 1624 123456',
+        niNumber: 'AB123456C'
       })
       
-      // Direct redirect to dashboard
+      console.log('Session update result:', updateResult)
+      
+      // Wait a moment for session to update
+      await new Promise(resolve => setTimeout(resolve, 500))
+      
+      // Force a full page refresh to re-evaluate session
       window.location.href = '/'
     } catch (error) {
       console.error('Onboarding completion error:', error)
